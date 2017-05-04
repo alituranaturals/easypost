@@ -14,7 +14,7 @@ end
 post "/webhook" do
   event = JSON.parse(request.body.read, object_class: OpenStruct)
 
-  if event.description == "tracker.created"
+  if event.mode == "production" && event.description == "tracker.created"
     conn = Faraday.new(url: "https://api.easypost.com/fulfillment/vendor/v1")
     conn.basic_auth(ENV["EASYPOST_APIKEY"], "")
 
