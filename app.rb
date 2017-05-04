@@ -41,8 +41,8 @@ post "/webhook" do
 
     message = {
       subject: "Order Confirmation",
-      from_name: "Alitura",
-      from_email: "andy@alituranaturals.com",
+      from_name: "Andy Hnilo",
+      from_email: "info@alituranaturals.com",
       text: text,
       html: html,
       to: [
@@ -53,7 +53,6 @@ post "/webhook" do
       ]
     }
 
-    p message
     Mandrill::API.new(ENV["MANDRILL_APIKEY"]).messages.send message
   end
 
@@ -67,5 +66,5 @@ def pretty_address(address)
     text = "#{text} #{address.street2}"
   end
 
-  "#{text}, #{address.city}, #{address.state} #{address.zip}"
+  "#{text.strip}, #{address.city}, #{address.state} #{address.zip}"
 end

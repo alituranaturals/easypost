@@ -1,20 +1,20 @@
- %CUSTOMERNAME%,
- Your order has been scheduled for shipment.
+%CUSTOMERNAME%,
+Your order has been scheduled for shipment.
 
- Tracking:
- %TRACKINGNUMBER%
- (Please allow up to 24 hours for tracking updates to appear.)
+Tracking:
+%TRACKINGNUMBER%
+(Please allow up to 24 hours for tracking updates to appear.)
 
- Shipped On:
- %SHIPPINGDATE%
+Shipped On:
+%SHIPPINGDATE%
 
- Shipped Via:
- %CARRIER%
- %SHIPPING_METHOD%
+Shipped Via:
+%CARRIER%
+%SHIPPING_METHOD%
 
- Shipped To:
- %CUSTOMER_ADDRESS%
+Shipped To:
+%CUSTOMER_ADDRESS%
 
- Regards,
- Andy
- andy@alituranaturals.com
+Regards,
+Andy
+andy@alituranaturals.com
