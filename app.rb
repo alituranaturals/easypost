@@ -33,6 +33,7 @@ post "/webhook" do
 
     html.gsub!("%CUSTOMERNAME%", order.destination.name || order.destination.company)
     html.gsub!("%TRACKINGNUMBER%", event.result.tracking_code)
+    html.gsub!("%TRACKINGURL%", event.result.public_url)
     html.gsub!("%SHIPPINGDATE%", DateTime.parse(event.result.created_at).strftime("%Y-%d-%m"))
     html.gsub!("%CARRIER%", event.result.carrier)
     html.gsub!("%SHIPPING_METHOD%", event.result.carrier_detail.service || "")
@@ -53,7 +54,7 @@ post "/webhook" do
     }
 
     p message
-    #Mandrill::API.new(ENV["MANDRILL_APIKEY"]).messages.send message
+    Mandrill::API.new(ENV["MANDRILL_APIKEY"]).messages.send message
   end
 
   "OK"
